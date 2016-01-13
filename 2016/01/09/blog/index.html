@@ -60,11 +60,7 @@
 二. 安装相关软件
 安装Node.js (Hexo 基于 Node.js 开发)
 安装Git
-安装文本编辑器 Sublime Text 或UltraEdit (可选)
-
-三. 配置GitHub
-登陆GitHub官网，注册GitHub账号；
-创建仓库Repository仓库名必须为 your_user_">
+安装文本编辑器 Sublime Text 或UltraEdit (可选)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows下使用Hexo搭建个人博客">
 <meta property="og:url" content="http://lwcn01.github.io/2016/01/09/blog/index.html">
@@ -76,12 +72,8 @@
 二. 安装相关软件
 安装Node.js (Hexo 基于 Node.js 开发)
 安装Git
-安装文本编辑器 Sublime Text 或UltraEdit (可选)
-
-三. 配置GitHub
-登陆GitHub官网，注册GitHub账号；
-创建仓库Repository仓库名必须为 your_user_">
-<meta property="og:updated_time" content="2016-01-13T14:41:12.418Z">
+安装文本编辑器 Sublime Text 或UltraEdit (可选)">
+<meta property="og:updated_time" content="2016-01-13T14:46:53.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows下使用Hexo搭建个人博客">
 <meta name="twitter:description" content="一. 博客分类
@@ -91,11 +83,7 @@
 二. 安装相关软件
 安装Node.js (Hexo 基于 Node.js 开发)
 安装Git
-安装文本编辑器 Sublime Text 或UltraEdit (可选)
-
-三. 配置GitHub
-登陆GitHub官网，注册GitHub账号；
-创建仓库Repository仓库名必须为 your_user_">
+安装文本编辑器 Sublime Text 或UltraEdit (可选)">
 
 
 
@@ -335,10 +323,12 @@
 <li>安装<a href="http://git-scm.com/download" target="_blank" rel="external">Git</a></li>
 <li>安装文本编辑器 Sublime Text 或UltraEdit (可选)</li>
 </ol>
+<a id="more"></a>
 <h3 id="u4E09-__u914D_u7F6EGitHub"><a href="#u4E09-__u914D_u7F6EGitHub" class="headerlink" title="三. 配置GitHub"></a>三. 配置GitHub</h3><ul>
 <li>登陆<a href="https://github.com/" target="_blank" rel="external">GitHub</a>官网，注册GitHub账号；</li>
 <li>创建仓库Repository<br>仓库名必须为 <code>your_user_name.github.io</code></li>
-<li>配置<strong>SSH-key</strong><ul>
+<li><p>配置<strong>SSH-key</strong></p>
+<ul>
 <li>设置用户名和邮箱（可选）<ul>
 <li><code>&lt;git config --global user.email &quot;{Email}&quot;&gt;</code></li>
 <li><code>&lt;git config --global user.name &quot;{UserName}&quot;&gt;</code></li>
@@ -353,9 +343,13 @@
 <li><code>&lt;$ cd ~/. ssh&gt;</code></li>
 </ul>
 </li>
-<li>生成密钥<ul>
-<li><code>$ ssh-keygen -t rsa -C {your_email@sample.com}</code><br><code>Generating public/private rsa key pair.</code><br><code>Enter file in which to save the key (/C:/Users/SKY-PC/.ssh/id_rsa): [Press enter]</code><br><code>Enter passphrase (empty for no passphrase): &lt;输入加密串&gt;</code><br><code>Enter same passphrase again: &lt;再次输入加密串&gt;</code><br><code>Your identification has been saved in C:/Users/SKY-PC/.ssh/id_rsa.</code><br><code>Your public key has been saved in C:/Users/SKY-PC/.ssh/id_rsa.pub.</code><br><code>The key fingerprint is:</code><br><code>b0:0c:2e:67:33:ab:c1:50:10:40:0a:ba:c1:80:59:22 your_email@sample.com</code> </li>
-<li>命令执行成功后，.ssh目录下会生成id_rsa和id_rsa.pub文件</li>
+<li><p>生成密钥</p>
+<ul>
+<li><p><code>$ ssh-keygen -t rsa -C {your_email@sample.com}</code></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Generating <span class="keyword">public</span>/<span class="keyword">private</span> rsa key pair.  	</span><br><span class="line">Enter file <span class="keyword">in</span> which to save the key (<span class="regexp">/C:/</span>Users<span class="regexp">/SKY-PC/</span>.ssh/id_rsa): [Press enter]        	  </span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase): &lt;输入加密串&gt;       </span><br><span class="line">Enter same passphrase <span class="string">again:</span> &lt;再次输入加密串&gt;     </span><br><span class="line">Your identification has been saved <span class="keyword">in</span> <span class="string">C:</span><span class="regexp">/Users/</span>SKY-PC<span class="regexp">/.ssh/</span>id_rsa.    </span><br><span class="line">Your <span class="keyword">public</span> key has been saved <span class="keyword">in</span> <span class="string">C:</span><span class="regexp">/Users/</span>SKY-PC<span class="regexp">/.ssh/</span>id_rsa.pub.    </span><br><span class="line">The key fingerprint <span class="string">is:</span>   </span><br><span class="line"><span class="string">b0:</span><span class="number">0</span><span class="string">c:</span><span class="number">2</span><span class="string">e:</span><span class="number">67</span>:<span class="number">33</span>:<span class="string">ab:</span><span class="string">c1:</span><span class="number">50</span>:<span class="number">10</span>:<span class="number">40</span>:<span class="number">0</span><span class="string">a:</span><span class="string">ba:</span><span class="string">c1:</span><span class="number">80</span>:<span class="number">59</span>:<span class="number">22</span> your_email<span class="annotation">@sample</span>.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>命令执行成功后，.ssh目录下会生成id_rsa和id_rsa.pub文件</p>
+</li>
 </ul>
 </li>
 <li>配置密钥<ul>
