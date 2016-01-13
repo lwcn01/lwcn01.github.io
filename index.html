@@ -313,19 +313,115 @@
 
       
         
-          <h3 id="u4E00-__u535A_u5BA2_u5206_u7C7B"><a href="#u4E00-__u535A_u5BA2_u5206_u7C7B" class="headerlink" title="一. 博客分类"></a>一. 博客分类</h3><ol>
-<li>托管博客：<a href="http://blog.csdn.net/">CSDN</a>，<a href="http://www.cnblogs.com/">博客园</a> 等；</li>
-<li>私有博客：<a href="https://wordpress.org/">WordPress</a>，<a href="https://hexo.io/">Hexo</a> 等；</li>
+          <span itemprop="articleBody">
+            
+              <h3 id="u4E00-__u535A_u5BA2_u5206_u7C7B"><a href="#u4E00-__u535A_u5BA2_u5206_u7C7B" class="headerlink" title="一. 博客分类"></a>一. 博客分类</h3><ol>
+<li>托管博客：<a href="http://blog.csdn.net/" target="_blank" rel="external">CSDN</a>，<a href="http://www.cnblogs.com/" target="_blank" rel="external">博客园</a> 等；</li>
+<li>私有博客：<a href="https://wordpress.org/" target="_blank" rel="external">WordPress</a>，<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> 等；</li>
 </ol>
 <h3 id="u4E8C-__u5B89_u88C5_u76F8_u5173_u8F6F_u4EF6"><a href="#u4E8C-__u5B89_u88C5_u76F8_u5173_u8F6F_u4EF6" class="headerlink" title="二. 安装相关软件"></a>二. 安装相关软件</h3><ol>
-<li>安装<a href="https://nodejs.org/en/">Node.js</a> (Hexo 基于 <em>Node.js</em> 开发)</li>
-<li>安装<a href="http://git-scm.com/download">Git</a></li>
-<li>安装文本编辑器 Sublime Text 或UltraEdit (可选)
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/01/09/blog/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+<li>安装<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a> (Hexo 基于 <em>Node.js</em> 开发)</li>
+<li>安装<a href="http://git-scm.com/download" target="_blank" rel="external">Git</a></li>
+<li>安装文本编辑器 Sublime Text 或UltraEdit (可选)</li>
+</ol>
+<h3 id="u4E09-__u914D_u7F6EGitHub"><a href="#u4E09-__u914D_u7F6EGitHub" class="headerlink" title="三. 配置GitHub"></a>三. 配置GitHub</h3><ul>
+<li>登陆<a href="https://github.com/" target="_blank" rel="external">GitHub</a>官网，注册GitHub账号；</li>
+<li>创建仓库Repository<br>仓库名必须为 <code>your_user_name.github.io</code></li>
+<li>配置<strong>SSH-key</strong><ul>
+<li>设置用户名和邮箱（可选）<ul>
+<li><code>&lt;git config --global user.email &quot;{Email}&quot;&gt;</code></li>
+<li><code>&lt;git config --global user.name &quot;{UserName}&quot;&gt;</code></li>
+</ul>
+</li>
+<li>检查Git是否存在ssh-key<ul>
+<li><code>&lt;$ cd ~/. ssh&gt;</code> 检查本机的ssh密钥</li>
+</ul>
+</li>
+<li>创建.ssh文件<ul>
+<li><code>&lt;$ mkdir ~/.ssh&gt;</code></li>
+<li><code>&lt;$ cd ~/. ssh&gt;</code></li>
+</ul>
+</li>
+<li>生成密钥<ul>
+<li><code>$ ssh-keygen -t rsa -C {your_email@sample.com}</code><br><code>Generating public/private rsa key pair.</code><br><code>Enter file in which to save the key (/C:/Users/SKY-PC/.ssh/id_rsa): [Press enter]</code><br><code>Enter passphrase (empty for no passphrase): &lt;输入加密串&gt;</code><br><code>Enter same passphrase again: &lt;再次输入加密串&gt;</code><br><code>Your identification has been saved in C:/Users/SKY-PC/.ssh/id_rsa.</code><br><code>Your public key has been saved in C:/Users/SKY-PC/.ssh/id_rsa.pub.</code><br><code>The key fingerprint is:</code><br><code>b0:0c:2e:67:33:ab:c1:50:10:40:0a:ba:c1:80:59:22 your_email@sample.com</code> </li>
+<li>命令执行成功后，.ssh目录下会生成id_rsa和id_rsa.pub文件</li>
+</ul>
+</li>
+<li>配置密钥<ul>
+<li>打开id_rsa.pub文件，复制其内容粘贴到GitHub的SSH中<br>{ Account settings -&gt; SSH Keys -&gt; Add SSH Key }</li>
+</ul>
+</li>
+<li>验证密钥<br>　　<code>$ ssh -T git@github.com</code><br>　　如果是下面的警告：<br>　　<code>The authenticity of host &#39;github.com (207.97.227.239)&#39; can&#39;t be established.</code><br>　　<code>RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</code><br>　　<code>Are you sure you want to continue connecting (yes/no)?</code><br>　　输入yes回车</li>
+</ul>
+</li>
+<li>可选<a href="https://gitcafe.com/" target="_blank" rel="external">GitCafe</a>，同GitHub类似配置</li>
+</ul>
+<h3 id="u56DB-__u5B89_u88C5Hexo"><a href="#u56DB-__u5B89_u88C5Hexo" class="headerlink" title="四. 安装Hexo"></a>四. 安装Hexo</h3><ul>
+<li>安装  <ul>
+<li>打开Git bash<br><code>$ npm install hexo –g</code><br>（注：NPM的全称是Node Package Manager，是一个Node.js包管理和分发工具，已经成为了非官方的发布Node模块（包）的标准。）  </li>
+<li>已安装Hexo，更新Hexo<br><code>$ npm update hexo –g</code></li>
+</ul>
+</li>
+<li>配置本地博客<ul>
+<li>创建目录<br><code>$ mkdir Hexo</code>  # 创建的目录名称和盘符位置可变</li>
+<li>初始化Hexo空间<br><code>$ cd Hexo</code><br><code>$ Hexo init</code></li>
+<li>安装node_modules<br><code>$ npm install</code><br><code>$ npm install hexo-deployer-git –save</code></li>
+<li>生成静态页面<br><code>$ hexo generate</code></li>
+<li>启动服务预览<br><code>$ hexo server</code></li>
+</ul>
+</li>
+<li>至此本地部署已完成，浏览器输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 就可以预览效果；</li>
+</ul>
+<h3 id="u4E94-__u90E8_u7F72_u5230GitHub"><a href="#u4E94-__u90E8_u7F72_u5230GitHub" class="headerlink" title="五. 部署到GitHub"></a>五. 部署到GitHub</h3><ul>
+<li>修改_config.yml文件<br><code>deploy:</code><br><code>type: git</code><br><code>repository: git@github.com:liman/liman.github.io.git</code><br><code>branch: master</code><br>如果是为一个项目制作网站，那么需要把branch设置为gh-pages</li>
+<li>开始部署<br><code>$ hexo deploy</code></li>
+<li>验证部署<br>浏览器输入<code>your_user_name.github.io</code></li>
+</ul>
+<h3 id="u516D-__u90E8_u7F72_u603B_u7ED3"><a href="#u516D-__u90E8_u7F72_u603B_u7ED3" class="headerlink" title="六. 部署总结"></a>六. 部署总结</h3><ul>
+<li>每次部署，可按步来进行<br><code>$ hexo clean</code>  #清除缓存<br><code>$ hexo generate</code><br><code>$ hexo deploy</code></li>
+<li>本地调试<br><code>$ hexo g</code> #生成静态网页<br><code>$ hexo s</code> #启动本地服务，进行文章预览调试<br>浏览器输入<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 查看搭建效果</li>
+</ul>
+<h3 id="u4E03-__u66F4_u65B0_u4E3B_u9898"><a href="#u4E03-__u66F4_u65B0_u4E3B_u9898" class="headerlink" title="七. 更新主题"></a>七. 更新主题</h3><ul>
+<li>克隆主题<br><code>$ cd themes</code><br><code>$ git clone https://github.com/iissnan/hexo-theme-next themes/next</code></li>
+<li>启用主题<br>克隆/下载 完成后，打开 站点配置文件，找到 theme 字段，并将其值更改为 next。</li>
+<li>验证主题  </li>
+<li>部署主题<br><code>$ cd themes/next</code><br><code>$ git pull origin master</code><br><code>$ hexo d -g</code></li>
+</ul>
+<h3 id="u516B-__u7F16_u5199_u6587_u7AE0"><a href="#u516B-__u7F16_u5199_u6587_u7AE0" class="headerlink" title="八. 编写文章"></a>八. 编写文章</h3><ul>
+<li>创建新文章<br><code>$ cd your-hexo-site</code><br><code>$ hexo new post &quot;我的博文&quot;</code> /<strong> 创建一个“我的博文”的md文件。 </strong>/<br>命令执行完成，在Hexo/sources/_post下生成一个md文件</li>
+<li>md文件属性<ul>
+<li>Front-matter定义了文件属性<ul>
+<li>title：定义了博文的标题</li>
+<li>date：定义了创作此博文的时间</li>
+<li>tags：定义了博文的标签<br>除了这三个属性以外我们还可以扩展设置一些属性。</li>
+<li>update：定义了最后修改的时间</li>
+<li>comments：定义能否评论此博文（true/false，默认为true）</li>
+<li>categories：定义了博文的种类</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Markdown语法<br>自行百度或Google<br>参照<a href="https://www.zybuluo.com/mdeditor" target="_blank" rel="external">Markdown</a>在线编辑器</li>
+</ul>
+<hr>
+<h3 id="u4E5D-__u5E38_u7528_u547D_u4EE4"><a href="#u4E5D-__u5E38_u7528_u547D_u4EE4" class="headerlink" title="九. 常用命令"></a>九. 常用命令</h3><ul>
+<li><code>hexo new &quot;postName&quot;</code> #新建文章   </li>
+<li><code>hexo new page &quot;pageName&quot;</code> #新建页面   </li>
+<li><code>hexo generate</code> #生成静态页面至public目录   </li>
+<li><code>hexo server</code> #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）   </li>
+<li><code>hexo deploy</code> #将.deploy目录部署到GitHub   </li>
+<li><code>hexo help</code>  # 查看帮助     </li>
+<li><code>hexo version</code>  #查看Hexo的版本   </li>
+<li><code>hexo deploy -g</code>  #生成加部署   </li>
+<li><code>hexo server -g</code>  #生成加预览<br>命令的简写   </li>
+<li><code>hexo n == hexo new</code>  </li>
+<li><code>hexo g == hexo generate</code>   </li>
+<li><code>hexo s == hexo server</code>   </li>
+<li><code>hexo d == hexo deploy</code>   </li>
+</ul>
+
+            
+          </span>
         
       
     </div>
